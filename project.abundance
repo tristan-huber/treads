@@ -52,8 +52,8 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.39646869983948635,
-      "y": 0.6420581655480984,
+      "x": 0.5666131621187801,
+      "y": 0.5570469798657719,
       "uniqueID": "id-20",
       "name": "IthFromAssembly",
       "ioValues": [
@@ -157,13 +157,51 @@
       "repoOwner": "tristan-huber",
       "repoName": "treads",
       "SVGwidth": 10
+    },
+    {
+      "atomType": "CutLayout",
+      "x": 0.5858747993579454,
+      "y": 0.3131991051454138,
+      "uniqueID": "id-43",
+      "name": "Cut Layout",
+      "ioValues": [
+        {
+          "name": "Sheet Width",
+          "ioValue": 96
+        },
+        {
+          "name": "Sheet Height",
+          "ioValue": 48
+        },
+        {
+          "name": "Part Padding",
+          "ioValue": 0.4
+        }
+      ],
+      "placements": [
+        [
+          {
+            "id": 0,
+            "rotate": 0,
+            "translate": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      ]
     }
   ],
   "allConnectors": [
     {
       "ap2Name": "geometry",
-      "ap1ID": "id-9",
+      "ap1ID": "id-35",
       "ap2ID": "id-20"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-35",
+      "ap2ID": "id-43"
     }
   ],
   "unitsKey": "Inches",
