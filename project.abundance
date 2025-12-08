@@ -51,6 +51,39 @@
       "SVGwidth": 10
     },
     {
+      "atomType": "CutLayout",
+      "x": 0.5858747993579454,
+      "y": 0.3131991051454138,
+      "uniqueID": "id-43",
+      "name": "Cut Layout",
+      "ioValues": [
+        {
+          "name": "Sheet Width",
+          "ioValue": 96
+        },
+        {
+          "name": "Sheet Height",
+          "ioValue": 48
+        },
+        {
+          "name": "Part Padding",
+          "ioValue": 0.4
+        }
+      ],
+      "placements": [
+        [
+          {
+            "id": 0,
+            "rotate": 0,
+            "translate": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      ]
+    },
+    {
       "atomType": "GitHubMolecule",
       "x": 0.5666131621187801,
       "y": 0.5570469798657719,
@@ -148,62 +181,18 @@
     },
     {
       "atomType": "Import",
-      "x": 0.3943285179240235,
-      "y": 0.30201342281879195,
-      "uniqueID": "id-35",
+      "x": 0.4018191546281434,
+      "y": 0.6554809843400448,
+      "uniqueID": "id-68",
       "fileName": "treads_only_srf.stp",
       "name": "Import",
       "type": "STEP",
       "repoOwner": "tristan-huber",
       "repoName": "treads",
       "SVGwidth": 10
-    },
-    {
-      "atomType": "CutLayout",
-      "x": 0.5858747993579454,
-      "y": 0.3131991051454138,
-      "uniqueID": "id-43",
-      "name": "Cut Layout",
-      "ioValues": [
-        {
-          "name": "Sheet Width",
-          "ioValue": 96
-        },
-        {
-          "name": "Sheet Height",
-          "ioValue": 48
-        },
-        {
-          "name": "Part Padding",
-          "ioValue": 0.4
-        }
-      ],
-      "placements": [
-        [
-          {
-            "id": 0,
-            "rotate": 0,
-            "translate": {
-              "x": 0,
-              "y": 0
-            }
-          }
-        ]
-      ]
     }
   ],
-  "allConnectors": [
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-35",
-      "ap2ID": "id-20"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-35",
-      "ap2ID": "id-43"
-    }
-  ],
+  "allConnectors": [],
   "unitsKey": "Inches",
   "fileTypeVersion": 1,
   "filetypeVersion": 1
