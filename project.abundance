@@ -35,7 +35,8 @@
       "ioValues": [
         {
           "name": "Sheet Width",
-          "ioValue": 96
+          "ioValue": 96,
+          "currentEquation": "96"
         },
         {
           "name": "Sheet Height",
@@ -226,7 +227,7 @@
         },
         {
           "name": "yDist",
-          "ioValue": 1018.4146430403844
+          "ioValue": 634.1400553287958
         },
         {
           "name": "zDist",
@@ -306,14 +307,19 @@
   ],
   "allConnectors": [
     {
+      "ap2Name": "Shape",
+      "ap1ID": "id-105",
+      "ap2ID": "id-128"
+    },
+    {
       "ap2Name": "geometry",
       "ap1ID": "id-110",
       "ap2ID": "id-115"
     },
     {
-      "ap2Name": "Shape",
+      "ap2Name": "geometry",
       "ap1ID": "id-110",
-      "ap2ID": "id-128"
+      "ap2ID": "id-43"
     },
     {
       "ap2Name": "yDist",
@@ -321,7 +327,7 @@
       "ap2ID": "id-115"
     }
   ],
-  "unitsKey": "Inches",
+  "unitsKey": "MM",
   "fileTypeVersion": 1,
   "filetypeVersion": 1
 }
