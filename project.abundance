@@ -188,6 +188,18 @@
       ],
       "allConnectors": [],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Import",
+      "x": 0.29373996789727125,
+      "y": 0.49888143176733785,
+      "uniqueID": "id-105",
+      "fileName": "single_tread.stp",
+      "name": "Import",
+      "type": "STEP",
+      "repoOwner": "tristan-huber",
+      "repoName": "treads",
+      "SVGwidth": 10
     }
   ],
   "allConnectors": [],
