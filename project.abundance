@@ -40,8 +40,8 @@
     },
     {
       "atomType": "CutLayout",
-      "x": 0.6024612092027822,
-      "y": 0.411764705882353,
+      "x": 0.5933654360620653,
+      "y": 0.3137254901960784,
       "uniqueID": "id-144",
       "name": "Cut Layout",
       "ioValues": [
@@ -272,6 +272,37 @@
       },
       "unitsKey": "Unitless",
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Gcode",
+      "x": 0.7431781701444623,
+      "y": 0.696078431372549,
+      "uniqueID": "id-237",
+      "ioValues": [
+        {
+          "name": "Tool Size",
+          "ioValue": 6.35
+        },
+        {
+          "name": "Passes",
+          "ioValue": 1
+        },
+        {
+          "name": "Speed",
+          "ioValue": 1500
+        },
+        {
+          "name": "Cut Through",
+          "ioValue": 0
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "treads",
+          "currentEquation": "treads"
+        }
+      ],
+      "partName": "treads",
+      "sortDirection": "Left"
     }
   ],
   "allConnectors": [
@@ -279,6 +310,16 @@
       "ap2Name": "shape",
       "ap1ID": "id-138",
       "ap2ID": "id-193"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-144",
+      "ap2ID": "id-237"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-144",
+      "ap2ID": "id-2"
     },
     {
       "ap2Name": "geometry",
