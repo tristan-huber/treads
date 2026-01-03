@@ -76,18 +76,8 @@
       "x": 0.4360620652755484,
       "y": 0.44771241830065356,
       "uniqueID": "id-193",
-      "ioValues": [
-        {
-          "name": "radius",
-          "ioValue": 5
-        },
-        {
-          "name": "height",
-          "ioValue": 10
-        }
-      ],
       "codeVersion": 1,
-      "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"radius\", type: \"number\", defaultValue: 5 },\n  { inputName: \"height\", type: \"number\", defaultValue: 10 }\n];\n\nlet importedShape = library[shape];\nconsole.log(\"in code atom\");\nconsole.log(importedShape);\nconst s = importedShape.geometry[0]\nif (s instanceof replicad.CompSolid) {\n  console.log(\" compsolid\")\n} else if (s instanceof replicad.Compound) {\n  console.log(\"compound\")\n} else if (s instanceof replicad.Solid) {\n  console.log(\"solid\")\n} else if (s instanceof replicad.Surface) {\n  console.log('surface')\n} else if (s instanceof replicad.Shell) {\n  console.log('shell')\n}\nconsole.log(`isshape3d: ${replicad.isShape3D((s))}`)\nlet f = 0\nfor (const foo in replicad.iterTopo(s.wrapped, \"compound\")) {\n  console.log(foo)\n  f++;\n}\nconsole.log(\"loop finished: \" + f)\nlet newPlane = replicad.makePlane()\nlet circDraw = replicad.drawCircle(radius)\nlet sketchCir = circDraw.sketchOnPlane(newPlane)\nlet cyl = sketchCir.extrude(height)\nlet cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};\n\nlet assembly = await Assembly([importedShape, cylObj]);\nreturn assembly;\n"
+      "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n];\n\nlet importedShape = library[shape];\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(resultGeoms[0])\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\n\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n"
     },
     {
       "atomType": "GitHubMolecule",
