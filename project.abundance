@@ -7,7 +7,7 @@
   "ioValues": [
     {
       "name": "Input (1)",
-      "ioValue": 10
+      "ioValue": 8
     }
   ],
   "topLevel": true,
@@ -40,8 +40,8 @@
     },
     {
       "atomType": "CutLayout",
-      "x": 0.35420010700909577,
-      "y": 0.2662192393736018,
+      "x": 0.6024612092027822,
+      "y": 0.411764705882353,
       "uniqueID": "id-144",
       "name": "Cut Layout",
       "ioValues": [
@@ -61,11 +61,109 @@
       "placements": [
         [
           {
-            "id": 0,
-            "rotate": 30,
+            "id": 4,
+            "rotate": 150,
             "translate": {
-              "x": 619.0464540166166,
-              "y": 884.8742843671305
+              "x": 354.7438804738213,
+              "y": 343.79515390513535
+            }
+          },
+          {
+            "id": 5,
+            "rotate": 0,
+            "translate": {
+              "x": 403.91814151178,
+              "y": 733.4881355774883
+            }
+          },
+          {
+            "id": 6,
+            "rotate": 90,
+            "translate": {
+              "x": 717.4563747532914,
+              "y": 839.9425961046026
+            }
+          },
+          {
+            "id": 12,
+            "rotate": 300,
+            "translate": {
+              "x": 1161.5985881092915,
+              "y": 822.3758257192544
+            }
+          },
+          {
+            "id": 7,
+            "rotate": 330,
+            "translate": {
+              "x": 1470.8356391671573,
+              "y": 310.6831468316977
+            }
+          },
+          {
+            "id": 11,
+            "rotate": 120,
+            "translate": {
+              "x": 1964.3446076709895,
+              "y": 369.6684875942751
+            }
+          },
+          {
+            "id": 10,
+            "rotate": 240,
+            "translate": {
+              "x": 1713.4210056825523,
+              "y": 915.9490908200421
+            }
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "rotate": 150,
+            "translate": {
+              "x": 305.0100062060675,
+              "y": 398.67539645986625
+            }
+          },
+          {
+            "id": 9,
+            "rotate": 150,
+            "translate": {
+              "x": 582.8639360780605,
+              "y": 385.1561152123428
+            }
+          },
+          {
+            "id": 8,
+            "rotate": 90,
+            "translate": {
+              "x": 389.1361904,
+              "y": 959.0986055
+            }
+          },
+          {
+            "id": 2,
+            "rotate": 90,
+            "translate": {
+              "x": 1076.5199739352015,
+              "y": 202.58028833712734
+            }
+          },
+          {
+            "id": 0,
+            "rotate": 210,
+            "translate": {
+              "x": 1140.3178707592892,
+              "y": 552.4961758001768
+            }
+          },
+          {
+            "id": 3,
+            "rotate": 300,
+            "translate": {
+              "x": 1195.9682110982167,
+              "y": 896.4324532939405
             }
           }
         ]
@@ -73,17 +171,17 @@
     },
     {
       "atomType": "Code",
-      "x": 0.4360620652755484,
-      "y": 0.44771241830065356,
+      "x": 0.3536650615302301,
+      "y": 0.6862745098039216,
       "uniqueID": "id-193",
       "codeVersion": 1,
       "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n];\n\nlet importedShape = library[shape];\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(replicad.cast(resultGeoms[0]))\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n  resultGeoms[i] = {\n    ...importedShape,\n    geometry: [replicad.cast(resultGeoms[i])],\n  }\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\nconsole.log(resultGeoms)\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n"
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.5666131621187801,
-      "y": 0.5570469798657719,
-      "uniqueID": "id-20",
+      "x": 0.42375601926163725,
+      "y": 0.3104575163398693,
+      "uniqueID": "id-225",
       "name": "IthFromAssembly",
       "ioValues": [
         {
@@ -97,13 +195,13 @@
           "atomType": "Output",
           "x": 0.98,
           "y": 0.5,
-          "uniqueID": "id-16"
+          "uniqueID": "id-221"
         },
         {
           "atomType": "Code",
           "x": 0.5026041666666666,
           "y": 0.6845238095238095,
-          "uniqueID": "id-17",
+          "uniqueID": "id-222",
           "ioValues": [
             {
               "name": "i",
@@ -117,7 +215,7 @@
           "atomType": "Input",
           "x": 0.025384615384615384,
           "y": 0.15384615384615385,
-          "uniqueID": "id-18",
+          "uniqueID": "id-223",
           "name": "geometry",
           "type": "geometry"
         },
@@ -125,7 +223,7 @@
           "atomType": "Input",
           "x": 0.025384615384615384,
           "y": 0.24615384615384617,
-          "uniqueID": "id-19",
+          "uniqueID": "id-224",
           "name": "i",
           "type": "number"
         }
@@ -133,18 +231,18 @@
       "allConnectors": [
         {
           "ap2Name": "number or geometry",
-          "ap1ID": "id-17",
-          "ap2ID": "id-16"
+          "ap1ID": "id-222",
+          "ap2ID": "id-221"
         },
         {
           "ap2Name": "geometry",
-          "ap1ID": "id-18",
-          "ap2ID": "id-17"
+          "ap1ID": "id-223",
+          "ap2ID": "id-222"
         },
         {
           "ap2Name": "i",
-          "ap1ID": "id-19",
-          "ap2ID": "id-17"
+          "ap1ID": "id-224",
+          "ap2ID": "id-222"
         }
       ],
       "parentRepo": {
@@ -178,14 +276,19 @@
   ],
   "allConnectors": [
     {
-      "ap2Name": "geometry",
-      "ap1ID": "id-138",
-      "ap2ID": "id-144"
-    },
-    {
       "ap2Name": "shape",
       "ap1ID": "id-138",
       "ap2ID": "id-193"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-193",
+      "ap2ID": "id-225"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-193",
+      "ap2ID": "id-144"
     }
   ],
   "unitsKey": "MM",
