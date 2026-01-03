@@ -77,7 +77,7 @@
       "y": 0.44771241830065356,
       "uniqueID": "id-193",
       "codeVersion": 1,
-      "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n];\n\nlet importedShape = library[shape];\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(resultGeoms[0])\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\n\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n"
+      "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n];\n\nlet importedShape = library[shape];\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(replicad.cast(resultGeoms[0]))\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n  resultGeoms[i] = {\n    ...importedShape,\n    geometry: [replicad.cast(resultGeoms[i])],\n  }\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\nconsole.log(resultGeoms)\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n"
     },
     {
       "atomType": "GitHubMolecule",
