@@ -71,109 +71,109 @@
       "placements": [
         [
           {
-            "id": 4,
-            "rotate": 150,
+            "id": 2,
+            "rotate": 60,
             "translate": {
-              "x": 354.7438804738213,
-              "y": 343.79515390513535
-            }
-          },
-          {
-            "id": 5,
-            "rotate": 0,
-            "translate": {
-              "x": 403.91814151178,
-              "y": 733.4881355774883
-            }
-          },
-          {
-            "id": 6,
-            "rotate": 90,
-            "translate": {
-              "x": 717.4563747532914,
-              "y": 839.9425961046026
-            }
-          },
-          {
-            "id": 12,
-            "rotate": 300,
-            "translate": {
-              "x": 1161.5985881092915,
-              "y": 822.3758257192544
-            }
-          },
-          {
-            "id": 7,
-            "rotate": 330,
-            "translate": {
-              "x": 1470.8356391671573,
-              "y": 310.6831468316977
+              "x": 407.17200093964146,
+              "y": 359.2704527922157
             }
           },
           {
             "id": 11,
-            "rotate": 120,
+            "rotate": 330,
             "translate": {
-              "x": 1964.3446076709895,
-              "y": 369.6684875942751
+              "x": 370.4281165940957,
+              "y": 813.6312964551919
+            }
+          },
+          {
+            "id": 6,
+            "rotate": 270,
+            "translate": {
+              "x": 738.262115628816,
+              "y": 839.6094413953974
+            }
+          },
+          {
+            "id": 9,
+            "rotate": 330,
+            "translate": {
+              "x": 1197.4140991302415,
+              "y": 426.8383563876572
             }
           },
           {
             "id": 10,
-            "rotate": 240,
+            "rotate": 180,
             "translate": {
-              "x": 1713.4210056825523,
-              "y": 915.9490908200421
+              "x": 1538.4514321422405,
+              "y": 846.1189751
+            }
+          },
+          {
+            "id": 0,
+            "rotate": 150,
+            "translate": {
+              "x": 2046.6059271986662,
+              "y": 364.3265676001768
             }
           }
         ],
         [
           {
-            "id": 1,
-            "rotate": 150,
+            "id": 4,
+            "rotate": 240,
             "translate": {
-              "x": 305.0100062060675,
-              "y": 398.67539645986625
+              "x": 359.07549434639265,
+              "y": 354.7438804738213
             }
           },
           {
-            "id": 9,
-            "rotate": 150,
+            "id": 5,
+            "rotate": 120,
             "translate": {
-              "x": 582.8639360780605,
-              "y": 385.1561152123428
-            }
-          },
-          {
-            "id": 8,
-            "rotate": 90,
-            "translate": {
-              "x": 389.1361904,
-              "y": 959.0986055
-            }
-          },
-          {
-            "id": 2,
-            "rotate": 90,
-            "translate": {
-              "x": 1076.5199739352015,
-              "y": 202.58028833712734
-            }
-          },
-          {
-            "id": 0,
-            "rotate": 210,
-            "translate": {
-              "x": 1140.3178707592892,
-              "y": 552.4961758001768
+              "x": 809.3938303216246,
+              "y": 388.99329497307986
             }
           },
           {
             "id": 3,
+            "rotate": 120,
+            "translate": {
+              "x": 365.8022966017834,
+              "y": 961.9650003060596
+            }
+          },
+          {
+            "id": 7,
+            "rotate": 270,
+            "translate": {
+              "x": 1175.8173747509495,
+              "y": 861.7493455115023
+            }
+          },
+          {
+            "id": 1,
             "rotate": 300,
             "translate": {
-              "x": 1195.9682110982167,
-              "y": 896.4324532939405
+              "x": 1390.8096408641147,
+              "y": 360.93250021329214
+            }
+          },
+          {
+            "id": 12,
+            "rotate": 0,
+            "translate": {
+              "x": 1963.9063078699794,
+              "y": 869.8042843711296
+            }
+          },
+          {
+            "id": 8,
+            "rotate": 120,
+            "translate": {
+              "x": 1983.74658611864,
+              "y": 333.1965047907855
             }
           }
         ]
@@ -181,8 +181,8 @@
     },
     {
       "atomType": "Code",
-      "x": 0.3536650615302301,
-      "y": 0.6862745098039216,
+      "x": 0.3502604166666667,
+      "y": 0.3057142857142857,
       "uniqueID": "id-193",
       "ioValues": [
         {
@@ -337,6 +337,130 @@
       },
       "unitsKey": "Unitless",
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.353515625,
+      "y": 0.7257142857142858,
+      "uniqueID": "id-274",
+      "name": "ExplodeDisjoint",
+      "ioValues": [
+        {
+          "name": "ShapeToExplode",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-270",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Code",
+          "x": 0.3912760416666667,
+          "y": 0.5171428571428571,
+          "uniqueID": "id-271",
+          "ioValues": [
+            {
+              "name": "shape",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "codeVersion": 1,
+          "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n];\n\nlet importedShape = library[shape];\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(replicad.cast(resultGeoms[0]))\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n  resultGeoms[i] = {\n    ...importedShape,\n    geometry: [replicad.cast(resultGeoms[i])],\n  }\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\nconsole.log(resultGeoms)\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.15384615384615385,
+          "uniqueID": "id-272",
+          "name": "ShapeToExplode",
+          "type": "geometry"
+        },
+        {
+          "atomType": "Readme",
+          "x": 0.203125,
+          "y": 0.6228571428571429,
+          "uniqueID": "id-273",
+          "name": "README",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "readMeText": "Makes an assembly where each leaf is a disjoint (ie not touching) part from the input. Particularly useful for imported entities.",
+          "global": true
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-271",
+          "ap2ID": "id-270"
+        },
+        {
+          "ap2Name": "shape",
+          "ap1ID": "id-272",
+          "ap2ID": "id-271"
+        }
+      ],
+      "parentRepo": {
+        "privateRepo": false,
+        "repoName": "ExplodeDisjoint",
+        "dateCreated": "2026-01-09T19:43:12Z",
+        "readMe": "https://raw.githubusercontent.com/tristan-huber/ExplodeDisjoint/master/README.md?sanitize=true",
+        "yyyy": 2026,
+        "topMoleculeID": "id-2775",
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/tristan-huber/ExplodeDisjoint",
+        "topics": [
+          "abundance-tool"
+        ],
+        "parentRepo": null,
+        "forks": 0,
+        "dateModified": "739625",
+        "ranking": 0,
+        "searchField": "explodedisjoint tristan-huber explodes disjoint 3d shapes into an assembly. abundance-tool",
+        "owner": "tristan-huber",
+        "description": "Explodes disjoint 3d shapes into an assembly.",
+        "contentURL": "https://raw.githubusercontent.com/tristan-huber/ExplodeDisjoint/master/project.abundance?sanitize=true",
+        "svgURL": "https://raw.githubusercontent.com/tristan-huber/ExplodeDisjoint/master/project.svg?sanitize=true",
+        "isLocal": false
+      },
+      "unitsKey": "Unitless",
+      "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Code",
+      "x": 0.55859375,
+      "y": 0.6628571428571429,
+      "uniqueID": "id-284",
+      "ioValues": [
+        {
+          "name": "shape",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "radius",
+          "ioValue": 5
+        },
+        {
+          "name": "height",
+          "ioValue": 10
+        }
+      ],
+      "codeVersion": 1,
+      "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"radius\", type: \"number\", defaultValue: 5 },\n  { inputName: \"height\", type: \"number\", defaultValue: 10 }\n];\n\nlet importedShape = library[shape];\nlet newPlane = replicad.makePlane()\nlet circDraw = replicad.drawCircle(radius)\nlet sketchCir = circDraw.sketchOnPlane(newPlane)\nlet cyl = sketchCir.extrude(height)\nlet cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};\n\nlet assembly = await Assembly([importedShape, cylObj]);\nreturn assembly;\n"
     }
   ],
   "allConnectors": [
@@ -344,6 +468,11 @@
       "ap2Name": "shape",
       "ap1ID": "id-138",
       "ap2ID": "id-193"
+    },
+    {
+      "ap2Name": "ShapeToExplode",
+      "ap1ID": "id-138",
+      "ap2ID": "id-274"
     },
     {
       "ap2Name": "geometry",
@@ -357,12 +486,12 @@
     },
     {
       "ap2Name": "geometry",
-      "ap1ID": "id-193",
+      "ap1ID": "id-274",
       "ap2ID": "id-225"
     },
     {
       "ap2Name": "geometry",
-      "ap1ID": "id-193",
+      "ap1ID": "id-274",
       "ap2ID": "id-144"
     }
   ],
