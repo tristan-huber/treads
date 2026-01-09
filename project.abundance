@@ -66,118 +66,114 @@
         {
           "name": "Part Padding",
           "ioValue": 10
-        },
-        {
-          "name": "Orientations per Part",
-          "ioValue": 24
         }
       ],
       "placements": [
         [
           {
-            "id": 0,
-            "rotate": 180,
-            "translate": {
-              "x": 324.9560180500622,
-              "y": 388.4151017511417
-            }
-          },
-          {
-            "id": 4,
-            "rotate": 330,
-            "translate": {
-              "x": 417.5126704419673,
-              "y": 790.4824872463926
-            }
-          },
-          {
-            "id": 9,
-            "rotate": 45,
-            "translate": {
-              "x": 852.8583931974741,
-              "y": 894.5928730722958
-            }
-          },
-          {
-            "id": 8,
-            "rotate": 30,
-            "translate": {
-              "x": 1474.1916989799706,
-              "y": 384.87674815791786
-            }
-          },
-          {
-            "id": 1,
-            "rotate": 195,
-            "translate": {
-              "x": 1630.9554071786556,
-              "y": 823.2445140709175
-            }
-          },
-          {
-            "id": 3,
-            "rotate": 225,
-            "translate": {
-              "x": 2009.6819071491575,
-              "y": 767.5922817753137
-            }
-          }
-        ],
-        [
-          {
-            "id": 5,
-            "rotate": 300,
-            "translate": {
-              "x": 152.92992903131284,
-              "y": 441.6591340787996
-            }
-          },
-          {
-            "id": 6,
-            "rotate": 180,
-            "translate": {
-              "x": 606.4831422664242,
-              "y": 363.69231976345355
-            }
-          },
-          {
-            "id": 7,
-            "rotate": 75,
-            "translate": {
-              "x": 873.9009794971319,
-              "y": 875.5894796347147
-            }
-          },
-          {
-            "id": 12,
-            "rotate": 300,
-            "translate": {
-              "x": 1359.1254377493397,
-              "y": 822.3758257192544
-            }
-          },
-          {
             "id": 2,
-            "rotate": 30,
+            "rotate": 60,
             "translate": {
-              "x": 1678.3523596678576,
-              "y": 807.6523543976841
+              "x": 407.17200093964146,
+              "y": 359.2704527922157
             }
           },
           {
             "id": 11,
             "rotate": 330,
             "translate": {
-              "x": 2094.3476776216676,
-              "y": 843.3173504551919
+              "x": 370.4281165940957,
+              "y": 813.6312964551919
+            }
+          },
+          {
+            "id": 6,
+            "rotate": 270,
+            "translate": {
+              "x": 738.262115628816,
+              "y": 839.6094413953974
+            }
+          },
+          {
+            "id": 9,
+            "rotate": 330,
+            "translate": {
+              "x": 1197.4140991302415,
+              "y": 426.8383563876572
             }
           },
           {
             "id": 10,
-            "rotate": 210,
+            "rotate": 180,
             "translate": {
-              "x": 1275.5821376200422,
-              "y": 322.0028283174478
+              "x": 1538.4514321422405,
+              "y": 846.1189751
+            }
+          },
+          {
+            "id": 0,
+            "rotate": 150,
+            "translate": {
+              "x": 2046.6059271986662,
+              "y": 364.3265676001768
+            }
+          }
+        ],
+        [
+          {
+            "id": 4,
+            "rotate": 240,
+            "translate": {
+              "x": 359.07549434639265,
+              "y": 354.7438804738213
+            }
+          },
+          {
+            "id": 5,
+            "rotate": 120,
+            "translate": {
+              "x": 809.3938303216246,
+              "y": 388.99329497307986
+            }
+          },
+          {
+            "id": 3,
+            "rotate": 120,
+            "translate": {
+              "x": 365.8022966017834,
+              "y": 961.9650003060596
+            }
+          },
+          {
+            "id": 7,
+            "rotate": 270,
+            "translate": {
+              "x": 1175.8173747509495,
+              "y": 861.7493455115023
+            }
+          },
+          {
+            "id": 1,
+            "rotate": 300,
+            "translate": {
+              "x": 1390.8096408641147,
+              "y": 360.93250021329214
+            }
+          },
+          {
+            "id": 12,
+            "rotate": 0,
+            "translate": {
+              "x": 1963.9063078699794,
+              "y": 869.8042843711296
+            }
+          },
+          {
+            "id": 8,
+            "rotate": 120,
+            "translate": {
+              "x": 1983.74658611864,
+              "y": 333.1965047907855
             }
           }
         ]
@@ -231,24 +227,6 @@
       ],
       "partName": "treads",
       "sortDirection": "Left"
-    },
-    {
-      "atomType": "Code",
-      "x": 0.55859375,
-      "y": 0.6628571428571429,
-      "uniqueID": "id-284",
-      "ioValues": [
-        {
-          "name": "shape",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "depth",
-          "ioValue": 1
-        }
-      ],
-      "codeVersion": 1,
-      "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"depth\", type: \"number\", defaultValue: 1 },\n];\n\nlet importedShape = library[shape];\nconst leafs = AssemblyAsIterable(importedShape)\nlet nextId = 1\n\nconst getCenter = (bounds) => {\n  const result = []\n  for (let i = 0; i < bounds.min.length; i++) {\n    result[i] = (bounds.min[i] + bounds.max[i]) / 2\n  }\n}\n\nconst result = [];\n\nfor (const leaf of leafs) {\n  const bounds = await GetBounds(leaf);\n  const center = getCenter(bounds);\n  const label = replicad.drawText(nextId).move(center[0], center[1]);\n    \n  \n  nextId++;\n}\n\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(replicad.cast(resultGeoms[0]))\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n  resultGeoms[i] = {\n    ...importedShape,\n    geometry: [replicad.cast(resultGeoms[i])],\n  }\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\nconsole.log(resultGeoms)\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n\n\nlet importedShape = library[shape];\nlet newPlane = replicad.makePlane()\nlet circDraw = replicad.drawCircle(radius)\nlet sketchCir = circDraw.sketchOnPlane(newPlane)\nlet cyl = sketchCir.extrude(height)\nlet cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};\n\nlet assembly = await Assembly([importedShape, cylObj]);\nreturn assembly;\n"
     },
     {
       "atomType": "GitHubMolecule",
@@ -461,6 +439,24 @@
       },
       "unitsKey": "Unitless",
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Code",
+      "x": 0.55859375,
+      "y": 0.6628571428571429,
+      "uniqueID": "id-284",
+      "ioValues": [
+        {
+          "name": "shape",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "depth",
+          "ioValue": 1
+        }
+      ],
+      "codeVersion": 1,
+      "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"depth\", type: \"number\", defaultValue: 1 },\n];\n\nlet importedShape = library[shape];\nconst leafs = AssemblyAsIterable(importedShape)\nlet nextId = 1\n\nconst getCenter = (bounds) => {\n  const result = []\n  for (let i = 0; i < bounds.min.length; i++) {\n    result[i] = (bounds.min[i] + bounds.max[i]) / 2\n  }\n}\n\nconst result = [];\n\nfor (const leaf of leafs) {\n  const bounds = await GetBounds(leaf);\n  const center = getCenter(bounds);\n  const label = replicad.drawText(nextId).move(center[0], center[1]);\n    \n  \n  nextId++;\n}\n\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(replicad.cast(resultGeoms[0]))\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n  resultGeoms[i] = {\n    ...importedShape,\n    geometry: [replicad.cast(resultGeoms[i])],\n  }\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\nconsole.log(resultGeoms)\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n\n\nlet importedShape = library[shape];\nlet newPlane = replicad.makePlane()\nlet circDraw = replicad.drawCircle(radius)\nlet sketchCir = circDraw.sketchOnPlane(newPlane)\nlet cyl = sketchCir.extrude(height)\nlet cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};\n\nlet assembly = await Assembly([importedShape, cylObj]);\nreturn assembly;\n"
     }
   ],
   "allConnectors": [
