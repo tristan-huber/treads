@@ -229,24 +229,6 @@
       "sortDirection": "Left"
     },
     {
-      "atomType": "Code",
-      "x": 0.55859375,
-      "y": 0.6628571428571429,
-      "uniqueID": "id-284",
-      "ioValues": [
-        {
-          "name": "shape",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "depth",
-          "ioValue": 1
-        }
-      ],
-      "codeVersion": 1,
-      "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"depth\", type: \"number\", defaultValue: 1 },\n];\n\nlet importedShape = library[shape];\nconst leafs = AssemblyAsIterable(importedShape)\nlet nextId = 1\n\nconst getCenter = (bounds) => {\n  const result = []\n  for (let i = 0; i < bounds.min.length; i++) {\n    result[i] = (bounds.min[i] + bounds.max[i]) / 2\n  }\n}\n\nconst result = [];\n\nfor (const leaf of leafs) {\n  const bounds = await GetBounds(leaf);\n  const center = getCenter(bounds);\n  const label = replicad.drawText(nextId).move(center[0], center[1]);\n    \n  \n  nextId++;\n}\n\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(replicad.cast(resultGeoms[0]))\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n  resultGeoms[i] = {\n    ...importedShape,\n    geometry: [replicad.cast(resultGeoms[i])],\n  }\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\nconsole.log(resultGeoms)\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n\n\nlet importedShape = library[shape];\nlet newPlane = replicad.makePlane()\nlet circDraw = replicad.drawCircle(radius)\nlet sketchCir = circDraw.sketchOnPlane(newPlane)\nlet cyl = sketchCir.extrude(height)\nlet cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};\n\nlet assembly = await Assembly([importedShape, cylObj]);\nreturn assembly;\n"
-    },
-    {
       "atomType": "GitHubMolecule",
       "x": 0.42375601926163725,
       "y": 0.3104575163398693,
@@ -457,6 +439,24 @@
       },
       "unitsKey": "Unitless",
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Code",
+      "x": 0.55859375,
+      "y": 0.6628571428571429,
+      "uniqueID": "id-284",
+      "ioValues": [
+        {
+          "name": "shape",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "depth",
+          "ioValue": 1
+        }
+      ],
+      "codeVersion": 1,
+      "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"depth\", type: \"number\", defaultValue: 1 },\n];\n\nlet importedShape = library[shape];\nconst leafs = AssemblyAsIterable(importedShape)\nlet nextId = 1\n\nconst getCenter = (bounds) => {\n  const result = []\n  for (let i = 0; i < bounds.min.length; i++) {\n    result[i] = (bounds.min[i] + bounds.max[i]) / 2\n  }\n}\n\nconst result = [];\n\nfor (const leaf of leafs) {\n  const bounds = await GetBounds(leaf);\n  const center = getCenter(bounds);\n  const label = replicad.drawText(nextId).move(center[0], center[1]);\n    \n  \n  nextId++;\n}\n\nconst s = importedShape.geometry[0]\nconst resultGeoms = []\nfor (const foo of replicad.iterTopo(s.wrapped, \"solid\")) {\n  resultGeoms.push(foo)\n}\nconsole.log(`extracted ${resultGeoms.length} solids`)\nconsole.log(replicad.cast(resultGeoms[0]))\n\nfor (let i = 0; i < resultGeoms.length; i++) {\n  resultGeoms[i] = {\n    ...importedShape,\n    geometry: [replicad.cast(resultGeoms[i])],\n  }\n}\n/*let cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};*/\nconsole.log(resultGeoms)\nlet assembly = await Assembly(resultGeoms);\nreturn assembly;\n\n\nlet importedShape = library[shape];\nlet newPlane = replicad.makePlane()\nlet circDraw = replicad.drawCircle(radius)\nlet sketchCir = circDraw.sketchOnPlane(newPlane)\nlet cyl = sketchCir.extrude(height)\nlet cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};\n\nlet assembly = await Assembly([importedShape, cylObj]);\nreturn assembly;\n"
     }
   ],
   "allConnectors": [
