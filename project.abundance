@@ -248,8 +248,8 @@
     },
     {
       "atomType": "Code",
-      "x": 0.5345052083333334,
-      "y": 0.806547619047619,
+      "x": 0.4407552083333333,
+      "y": 0.8452380952380952,
       "uniqueID": "id-328",
       "ioValues": [
         {
@@ -262,7 +262,7 @@
         }
       ],
       "codeVersion": 1,
-      "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"depth\", type: \"number\", defaultValue: 1 },\n];\n\nlet importedShape = library[shape];\nconst leafs = await AssemblyAsIterable(importedShape)\nlet nextId = 1\n\nconst getCenter = (bounds) => {\n  const result = []\n  for (let i = 0; i < bounds.min.length; i++) {\n    result[i] = (bounds.min[i] + bounds.max[i]) / 2\n  }\n}\n\nconst result = [];\nconst promises = []\n\nlet runningZOffset = 0;\n\nconsole.log(leafs)\nleafs.forEach((leaf) => {\n  const replicadShape = leaf.geometry[0]  \n  let longestEdge = undefined;\n  let len = 0;\n  for (const edge of replicadShape.edges) {\n    const l = edge.length\n    if (l > len) {\n      len = l;\n      longestEdge = edge;\n    }\n  }\n\n  // compute rotation\n  const heading = longestEdge.endPoint.sub(longestEdge.startPoint).normalized()\n  const radians = -1 * Math.atan2(heading.y, heading.x) * (180 / Math.PI)\n\n  // compute movement\n  const bounds = replicadShape.boundingBox\n\n  const x = -1 * bounds.center.x\n  const y = -1 * bounds.center.y\n  const z = -1 * bounds.bounds[0][2] + runningZOffset\n\n  console.log(`shifting by ${x}, ${y}, ${z}`);\n  let shiftedShape = replicadShape.clone().translate(x, y, z)\n  runningZOffset += bounds.depth + 1\n\n  console.log(\"shift complete\")\n  \n  leaf.geometry[0] = shiftedShape.clone().rotate(radians)\n  console.log('rotate finished')\n  console.log(leaf)\n  result.push(leaf);\n});\nconsole.log(result)\n\nlet assembly = await Assembly(result);\nreturn assembly;\n\n"
+      "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"depth\", type: \"number\", defaultValue: 1 },\n];\n\nlet importedShape = library[shape];\nconst leafs = await AssemblyAsIterable(importedShape)\nlet nextId = 1\n\nconst getCenter = (bounds) => {\n  const result = []\n  for (let i = 0; i < bounds.min.length; i++) {\n    result[i] = (bounds.min[i] + bounds.max[i]) / 2\n  }\n}\n\nconst result = [];\nconst promises = []\n\nlet runningZOffset = 0;\n\nconsole.log(leafs)\nleafs.forEach((leaf) => {\n  const replicadShape = leaf.geometry[0]  \n  let longestEdge = undefined;\n  let len = 0;\n  for (const edge of replicadShape.edges) {\n    const l = edge.length\n    if (l > len) {\n      len = l;\n      longestEdge = edge;\n    }\n  }\n\n  // compute rotation\n  const heading = longestEdge.endPoint.sub(longestEdge.startPoint).normalized()\n  const radians = -1 * Math.atan2(heading.y, heading.x) * (180 / Math.PI)\n\n  // compute movement\n  const bounds = replicadShape.boundingBox\n\n  const x = -1 * bounds.center[0]\n  const y = -1 * bounds.center[1]\n  const z = -1 * bounds.bounds[0][2] + runningZOffset\n\n  console.log(`shifting by ${x}, ${y}, ${z}`);\n  let shiftedShape = replicadShape.clone().translate(x, y, z)\n  runningZOffset += bounds.depth + 1\n\n  console.log(\"shift complete\")\n  \n  leaf.geometry[0] = shiftedShape.clone().rotate(radians)\n  console.log('rotate finished')\n  console.log(leaf)\n  result.push(leaf);\n});\nconsole.log(result)\n\nlet assembly = await Assembly(result);\nreturn assembly;\n\n"
     },
     {
       "atomType": "GitHubMolecule",
