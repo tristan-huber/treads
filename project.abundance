@@ -46,8 +46,8 @@
     },
     {
       "atomType": "CutLayout",
-      "x": 0.5533854166666666,
-      "y": 0.2113095238095238,
+      "x": 0.39713541666666663,
+      "y": 0.4553571428571428,
       "uniqueID": "id-144",
       "name": "Cut Layout",
       "ioValues": [
@@ -199,8 +199,8 @@
     },
     {
       "atomType": "Gcode",
-      "x": 0.7643229166666667,
-      "y": 0.17857142857142858,
+      "x": 0.8932291666666666,
+      "y": 0.6785714285714286,
       "uniqueID": "id-237",
       "ioValues": [
         {
@@ -234,8 +234,8 @@
     },
     {
       "atomType": "Code",
-      "x": 0.4381510416666667,
-      "y": 0.28273809523809523,
+      "x": 0.5397135416666666,
+      "y": 0.23214285714285715,
       "uniqueID": "id-284",
       "ioValues": [
         {
@@ -267,6 +267,300 @@
       ],
       "codeVersion": 1,
       "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"depth\", type: \"number\", defaultValue: 1 },\n];\n\nlet importedShape = library[shape];\nconst leafs = await AssemblyAsIterable(importedShape)\nlet nextId = 1\n\nconst getCenter = (bounds) => {\n  const result = []\n  for (let i = 0; i < bounds.min.length; i++) {\n    result[i] = (bounds.min[i] + bounds.max[i]) / 2\n  }\n}\n\nconst result = [];\nconst promises = []\n\nlet runningZOffset = 0;\n\nconsole.log(leafs)\nleafs.forEach((leaf) => {\n  const replicadShape = leaf.geometry[0]  \n  let longestEdge = undefined;\n  let len = 0;\n  for (const edge of replicadShape.edges) {\n    const l = edge.length\n    if (l > len) {\n      len = l;\n      longestEdge = edge;\n    }\n  }\n\n  // compute rotation\n  const heading = longestEdge.endPoint.sub(longestEdge.startPoint).normalized()\n  const radians = -1 * Math.atan2(heading.y, heading.x) * (180 / Math.PI)\n\n  // compute movement\n  const bounds = replicadShape.boundingBox\n\n  const x = -1 * bounds.center[0]\n  const y = -1 * bounds.center[1]\n  const z = -1 * bounds.bounds[0][2] + runningZOffset\n\n  console.log(`shifting by ${x}, ${y}, ${z}`);\n  let shiftedShape = replicadShape.clone().translate(x, y, z)\n  runningZOffset += bounds.depth + 1\n\n  console.log(\"shift complete\")\n  \n  leaf.geometry[0] = shiftedShape.clone().rotate(radians)\n  console.log('rotate finished')\n  console.log(leaf)\n  result.push(leaf);\n});\nconsole.log(result)\n\nlet assembly = await Assembly(result);\nreturn assembly;\n\n"
+    },
+    {
+      "atomType": "CutLayout",
+      "x": 0.5234375,
+      "y": 0.8690476190476191,
+      "uniqueID": "id-376",
+      "name": "Cut Layout",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Sheet Width",
+          "ioValue": 2438
+        },
+        {
+          "name": "Sheet Height",
+          "ioValue": 1219
+        },
+        {
+          "name": "Part Padding",
+          "ioValue": 10
+        },
+        {
+          "name": "Orientations per Part",
+          "ioValue": 2
+        }
+      ],
+      "placements": [
+        [
+          {
+            "id": 10,
+            "rotate": 180,
+            "translate": {
+              "x": 391.57518285673723,
+              "y": 167.11866209938438
+            }
+          },
+          {
+            "id": 4,
+            "rotate": 180,
+            "translate": {
+              "x": 402.15055180229797,
+              "y": 501.50313867666273
+            }
+          },
+          {
+            "id": 12,
+            "rotate": 0,
+            "translate": {
+              "x": 406.16835936705127,
+              "y": 711.9994106810374
+            }
+          },
+          {
+            "id": 5,
+            "rotate": 0,
+            "translate": {
+              "x": 394.0698087212103,
+              "y": 1040.6038414639768
+            }
+          },
+          {
+            "id": 6,
+            "rotate": 180,
+            "translate": {
+              "x": 1174.7354464555676,
+              "y": 200.85574711137377
+            }
+          },
+          {
+            "id": 11,
+            "rotate": 180,
+            "translate": {
+              "x": 1187.6809253872952,
+              "y": 835.8257809392921
+            }
+          },
+          {
+            "id": 8,
+            "rotate": 0,
+            "translate": {
+              "x": 1183.6554627519204,
+              "y": 407.54918010844983
+            }
+          },
+          {
+            "id": 2,
+            "rotate": 180,
+            "translate": {
+              "x": 1948.372819253258,
+              "y": 280.6795977699185
+            }
+          },
+          {
+            "id": 1,
+            "rotate": 0,
+            "translate": {
+              "x": 1966.5030593530328,
+              "y": 1041.8558042947682
+            }
+          },
+          {
+            "id": 7,
+            "rotate": 180,
+            "translate": {
+              "x": 1964.4315601916205,
+              "y": 704.0744755234158
+            }
+          }
+        ],
+        [
+          {
+            "id": 3,
+            "rotate": 0,
+            "translate": {
+              "x": 389.8490008,
+              "y": 167.09783062499963
+            }
+          },
+          {
+            "id": 9,
+            "rotate": 0,
+            "translate": {
+              "x": 389.70259455522324,
+              "y": 500.5459430153332
+            }
+          },
+          {
+            "id": 0,
+            "rotate": 0,
+            "translate": {
+              "x": 389.0414292289585,
+              "y": 834.6858552407074
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "atomType": "CutLayout",
+      "x": 0.5279947916666666,
+      "y": 0.5416666666666666,
+      "uniqueID": "id-383",
+      "name": "Cut Layout",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Sheet Width",
+          "ioValue": 2438
+        },
+        {
+          "name": "Sheet Height",
+          "ioValue": 1219,
+          "currentEquation": "1219"
+        },
+        {
+          "name": "Part Padding",
+          "ioValue": 10
+        },
+        {
+          "name": "Orientations per Part",
+          "ioValue": 4
+        }
+      ],
+      "placements": [
+        [
+          {
+            "id": 11,
+            "rotate": 0,
+            "translate": {
+              "x": 397.5377609,
+              "y": 167.36167417663611
+            }
+          },
+          {
+            "id": 6,
+            "rotate": 0,
+            "translate": {
+              "x": 392.96565944443245,
+              "y": 501.8385264223597
+            }
+          },
+          {
+            "id": 0,
+            "rotate": 0,
+            "translate": {
+              "x": 389.0414292289585,
+              "y": 836.1656546663174
+            }
+          },
+          {
+            "id": 7,
+            "rotate": 180,
+            "translate": {
+              "x": 1163.7115580916206,
+              "y": 830.7814037234158
+            }
+          },
+          {
+            "id": 5,
+            "rotate": 270,
+            "translate": {
+              "x": 1715.1773140880134,
+              "y": 394.5042249787897
+            }
+          },
+          {
+            "id": 10,
+            "rotate": 0,
+            "translate": {
+              "x": 1179.5121762269384,
+              "y": 478.07983102073365
+            }
+          },
+          {
+            "id": 1,
+            "rotate": 90,
+            "translate": {
+              "x": 2049.0329793113247,
+              "y": 391.86522959345683
+            }
+          },
+          {
+            "id": 9,
+            "rotate": 270,
+            "translate": {
+              "x": 2255.5720115544063,
+              "y": 412.9956752275684
+            }
+          },
+          {
+            "id": 4,
+            "rotate": 180,
+            "translate": {
+              "x": 1155.0158994381097,
+              "y": 196.60186722463297
+            }
+          },
+          {
+            "id": 3,
+            "rotate": 0,
+            "translate": {
+              "x": 1941.0239178573465,
+              "y": 969.5889381361297
+            }
+          }
+        ],
+        [
+          {
+            "id": 8,
+            "rotate": 90,
+            "translate": {
+              "x": 166.62327872440466,
+              "y": 393.88532417496737
+            }
+          },
+          {
+            "id": 12,
+            "rotate": 90,
+            "translate": {
+              "x": 497.6457244483854,
+              "y": 406.16835936705127
+            }
+          },
+          {
+            "id": 2,
+            "rotate": 0,
+            "translate": {
+              "x": 391.0519796467419,
+              "y": 909.0028645300815
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "atomType": "ExtractTag",
+      "x": 0.7018229166666666,
+      "y": 0.875,
+      "uniqueID": "id-390",
+      "name": "Extract Tag",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "tag": "sheet:0",
+      "tagIndex": 0
     },
     {
       "atomType": "GitHubMolecule",
@@ -481,288 +775,10 @@
       "fileTypeVersion": 1
     },
     {
-      "atomType": "CutLayout",
-      "x": 0.5305989583333334,
-      "y": 0.5892857142857143,
-      "uniqueID": "id-376",
-      "name": "Cut Layout",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "Sheet Width",
-          "ioValue": 2438
-        },
-        {
-          "name": "Sheet Height",
-          "ioValue": 1219
-        },
-        {
-          "name": "Part Padding",
-          "ioValue": 10
-        },
-        {
-          "name": "Orientations per Part",
-          "ioValue": 2
-        }
-      ],
-      "placements": [
-        [
-          {
-            "id": 10,
-            "rotate": 180,
-            "translate": {
-              "x": 391.57518285673723,
-              "y": 167.11866209938438
-            }
-          },
-          {
-            "id": 4,
-            "rotate": 180,
-            "translate": {
-              "x": 402.15055180229797,
-              "y": 501.50313867666273
-            }
-          },
-          {
-            "id": 12,
-            "rotate": 0,
-            "translate": {
-              "x": 406.16835936705127,
-              "y": 711.9994106810374
-            }
-          },
-          {
-            "id": 5,
-            "rotate": 0,
-            "translate": {
-              "x": 394.0698087212103,
-              "y": 1040.6038414639768
-            }
-          },
-          {
-            "id": 6,
-            "rotate": 180,
-            "translate": {
-              "x": 1174.7354464555676,
-              "y": 200.85574711137377
-            }
-          },
-          {
-            "id": 11,
-            "rotate": 180,
-            "translate": {
-              "x": 1187.6809253872952,
-              "y": 835.8257809392921
-            }
-          },
-          {
-            "id": 8,
-            "rotate": 0,
-            "translate": {
-              "x": 1183.6554627519204,
-              "y": 407.54918010844983
-            }
-          },
-          {
-            "id": 2,
-            "rotate": 180,
-            "translate": {
-              "x": 1948.372819253258,
-              "y": 280.6795977699185
-            }
-          },
-          {
-            "id": 1,
-            "rotate": 0,
-            "translate": {
-              "x": 1966.5030593530328,
-              "y": 1041.8558042947682
-            }
-          },
-          {
-            "id": 7,
-            "rotate": 180,
-            "translate": {
-              "x": 1964.4315601916205,
-              "y": 704.0744755234158
-            }
-          }
-        ],
-        [
-          {
-            "id": 3,
-            "rotate": 0,
-            "translate": {
-              "x": 389.8490008,
-              "y": 167.09783062499963
-            }
-          },
-          {
-            "id": 9,
-            "rotate": 0,
-            "translate": {
-              "x": 389.70259455522324,
-              "y": 500.5459430153332
-            }
-          },
-          {
-            "id": 0,
-            "rotate": 0,
-            "translate": {
-              "x": 389.0414292289585,
-              "y": 834.6858552407074
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "atomType": "CutLayout",
-      "x": 0.5872395833333334,
-      "y": 0.7976190476190476,
-      "uniqueID": "id-383",
-      "name": "Cut Layout",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "Sheet Width",
-          "ioValue": 2438
-        },
-        {
-          "name": "Sheet Height",
-          "ioValue": 1219
-        },
-        {
-          "name": "Part Padding",
-          "ioValue": 10
-        },
-        {
-          "name": "Orientations per Part",
-          "ioValue": 4
-        }
-      ],
-      "placements": [
-        [
-          {
-            "id": 11,
-            "rotate": 0,
-            "translate": {
-              "x": 397.5377609,
-              "y": 167.36167417663611
-            }
-          },
-          {
-            "id": 6,
-            "rotate": 0,
-            "translate": {
-              "x": 392.96565944443245,
-              "y": 501.8385264223597
-            }
-          },
-          {
-            "id": 0,
-            "rotate": 0,
-            "translate": {
-              "x": 389.0414292289585,
-              "y": 836.1656546663174
-            }
-          },
-          {
-            "id": 7,
-            "rotate": 180,
-            "translate": {
-              "x": 1163.7115580916206,
-              "y": 830.7814037234158
-            }
-          },
-          {
-            "id": 5,
-            "rotate": 270,
-            "translate": {
-              "x": 1715.1773140880134,
-              "y": 394.5042249787897
-            }
-          },
-          {
-            "id": 10,
-            "rotate": 0,
-            "translate": {
-              "x": 1179.5121762269384,
-              "y": 478.07983102073365
-            }
-          },
-          {
-            "id": 1,
-            "rotate": 90,
-            "translate": {
-              "x": 2049.0329793113247,
-              "y": 391.86522959345683
-            }
-          },
-          {
-            "id": 9,
-            "rotate": 270,
-            "translate": {
-              "x": 2255.5720115544063,
-              "y": 412.9956752275684
-            }
-          },
-          {
-            "id": 4,
-            "rotate": 180,
-            "translate": {
-              "x": 1155.0158994381097,
-              "y": 196.60186722463297
-            }
-          },
-          {
-            "id": 3,
-            "rotate": 0,
-            "translate": {
-              "x": 1941.0239178573465,
-              "y": 969.5889381361297
-            }
-          }
-        ],
-        [
-          {
-            "id": 8,
-            "rotate": 90,
-            "translate": {
-              "x": 166.62327872440466,
-              "y": 393.88532417496737
-            }
-          },
-          {
-            "id": 12,
-            "rotate": 90,
-            "translate": {
-              "x": 497.6457244483854,
-              "y": 406.16835936705127
-            }
-          },
-          {
-            "id": 2,
-            "rotate": 0,
-            "translate": {
-              "x": 391.0519796467419,
-              "y": 909.0028645300815
-            }
-          }
-        ]
-      ]
-    },
-    {
       "atomType": "ExtractTag",
-      "x": 0.7695312500000001,
-      "y": 0.636904761904762,
-      "uniqueID": "id-390",
+      "x": 0.6536458333333334,
+      "y": 0.6636904761904763,
+      "uniqueID": "id-452",
       "name": "Extract Tag",
       "ioValues": [
         {
@@ -770,7 +786,68 @@
           "ioValue": "__GEOMETRY_INPUT__"
         }
       ],
+      "tag": "sheet:1",
       "tagIndex": 0
+    },
+    {
+      "atomType": "Gcode",
+      "x": 0.7981770833333334,
+      "y": 0.8839285714285715,
+      "uniqueID": "id-455",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Tool Size",
+          "ioValue": 6.35
+        },
+        {
+          "name": "Passes",
+          "ioValue": 1
+        },
+        {
+          "name": "Speed",
+          "ioValue": 1500
+        },
+        {
+          "name": "Cut Through",
+          "ioValue": 0
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "treads",
+          "currentEquation": "treads"
+        }
+      ],
+      "partName": "treads",
+      "sortDirection": "Left"
+    },
+    {
+      "atomType": "Move",
+      "x": 0.7578125,
+      "y": 0.6398809523809524,
+      "uniqueID": "id-463",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": -1219,
+          "currentEquation": "-1219"
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0
+        }
+      ]
     }
   ],
   "allConnectors": [
@@ -786,16 +863,6 @@
     },
     {
       "ap2Name": "geometry",
-      "ap1ID": "id-144",
-      "ap2ID": "id-237"
-    },
-    {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-144",
-      "ap2ID": "id-2"
-    },
-    {
-      "ap2Name": "geometry",
       "ap1ID": "id-328",
       "ap2ID": "id-376"
     },
@@ -803,6 +870,26 @@
       "ap2Name": "geometry",
       "ap1ID": "id-328",
       "ap2ID": "id-383"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-383",
+      "ap2ID": "id-390"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-383",
+      "ap2ID": "id-452"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-383",
+      "ap2ID": "id-2"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-390",
+      "ap2ID": "id-455"
     },
     {
       "ap2Name": "geometry",
@@ -821,8 +908,13 @@
     },
     {
       "ap2Name": "geometry",
-      "ap1ID": "id-383",
-      "ap2ID": "id-390"
+      "ap1ID": "id-452",
+      "ap2ID": "id-463"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-463",
+      "ap2ID": "id-237"
     }
   ],
   "unitsKey": "MM",
