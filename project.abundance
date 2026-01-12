@@ -66,10 +66,6 @@
         {
           "name": "Part Padding",
           "ioValue": 10
-        },
-        {
-          "name": "Orientations per Part",
-          "ioValue": 12
         }
       ],
       "placements": [
@@ -290,10 +286,6 @@
         {
           "name": "Part Padding",
           "ioValue": 10
-        },
-        {
-          "name": "Orientations per Part",
-          "ioValue": 2
         }
       ],
       "placements": [
@@ -424,16 +416,11 @@
         },
         {
           "name": "Sheet Height",
-          "ioValue": 1219,
-          "currentEquation": "1219"
+          "ioValue": 1219
         },
         {
           "name": "Part Padding",
           "ioValue": 10
-        },
-        {
-          "name": "Orientations per Part",
-          "ioValue": 4
         }
       ],
       "placements": [
@@ -561,6 +548,80 @@
       ],
       "tag": "sheet:0",
       "tagIndex": 0
+    },
+    {
+      "atomType": "ExtractTag",
+      "x": 0.6536458333333334,
+      "y": 0.6636904761904763,
+      "uniqueID": "id-452",
+      "name": "Extract Tag",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "tag": "sheet:1",
+      "tagIndex": 0
+    },
+    {
+      "atomType": "Gcode",
+      "x": 0.7981770833333334,
+      "y": 0.8839285714285715,
+      "uniqueID": "id-455",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Tool Size",
+          "ioValue": 6.35
+        },
+        {
+          "name": "Passes",
+          "ioValue": 1
+        },
+        {
+          "name": "Speed",
+          "ioValue": 1500
+        },
+        {
+          "name": "Cut Through",
+          "ioValue": 0
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "treads",
+          "currentEquation": "treads"
+        }
+      ],
+      "partName": "treads",
+      "sortDirection": "Left"
+    },
+    {
+      "atomType": "Move",
+      "x": 0.7578125,
+      "y": 0.6398809523809524,
+      "uniqueID": "id-463",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": -1219
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0
+        }
+      ]
     },
     {
       "atomType": "GitHubMolecule",
@@ -773,81 +834,6 @@
       },
       "unitsKey": "Unitless",
       "fileTypeVersion": 1
-    },
-    {
-      "atomType": "ExtractTag",
-      "x": 0.6536458333333334,
-      "y": 0.6636904761904763,
-      "uniqueID": "id-452",
-      "name": "Extract Tag",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        }
-      ],
-      "tag": "sheet:1",
-      "tagIndex": 0
-    },
-    {
-      "atomType": "Gcode",
-      "x": 0.7981770833333334,
-      "y": 0.8839285714285715,
-      "uniqueID": "id-455",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "Tool Size",
-          "ioValue": 6.35
-        },
-        {
-          "name": "Passes",
-          "ioValue": 1
-        },
-        {
-          "name": "Speed",
-          "ioValue": 1500
-        },
-        {
-          "name": "Cut Through",
-          "ioValue": 0
-        },
-        {
-          "name": "Part Name",
-          "ioValue": "treads",
-          "currentEquation": "treads"
-        }
-      ],
-      "partName": "treads",
-      "sortDirection": "Left"
-    },
-    {
-      "atomType": "Move",
-      "x": 0.7578125,
-      "y": 0.6398809523809524,
-      "uniqueID": "id-463",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "xDist",
-          "ioValue": 0
-        },
-        {
-          "name": "yDist",
-          "ioValue": -1219,
-          "currentEquation": "-1219"
-        },
-        {
-          "name": "zDist",
-          "ioValue": 0
-        }
-      ]
     }
   ],
   "allConnectors": [
@@ -893,6 +879,16 @@
     },
     {
       "ap2Name": "geometry",
+      "ap1ID": "id-452",
+      "ap2ID": "id-463"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-463",
+      "ap2ID": "id-237"
+    },
+    {
+      "ap2Name": "geometry",
       "ap1ID": "id-274",
       "ap2ID": "id-225"
     },
@@ -905,16 +901,6 @@
       "ap2Name": "shape",
       "ap1ID": "id-274",
       "ap2ID": "id-328"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-452",
-      "ap2ID": "id-463"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-463",
-      "ap2ID": "id-237"
     }
   ],
   "unitsKey": "MM",
