@@ -66,10 +66,6 @@
         {
           "name": "Part Padding",
           "ioValue": 10
-        },
-        {
-          "name": "Orientations",
-          "ioValue": 4
         }
       ],
       "placements": [
@@ -290,10 +286,6 @@
         {
           "name": "Part Padding",
           "ioValue": 10
-        },
-        {
-          "name": "Orientations",
-          "ioValue": 12
         }
       ],
       "placements": [
@@ -429,11 +421,6 @@
         {
           "name": "Part Padding",
           "ioValue": 10
-        },
-        {
-          "name": "Orientations",
-          "ioValue": 4,
-          "currentEquation": "4"
         }
       ],
       "placements": [
