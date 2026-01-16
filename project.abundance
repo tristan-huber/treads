@@ -66,114 +66,118 @@
         {
           "name": "Part Padding",
           "ioValue": 10
+        },
+        {
+          "name": "Orientations",
+          "ioValue": 2
         }
       ],
       "placements": [
         [
           {
-            "id": 11,
-            "rotate": 210,
-            "translate": {
-              "x": 426.01746873135545,
-              "y": 116.34135231984638
-            }
-          },
-          {
-            "id": 6,
-            "rotate": 90,
-            "translate": {
-              "x": 363.69231976345355,
-              "y": 673.1864215046027
-            }
-          },
-          {
             "id": 1,
-            "rotate": 90,
+            "rotate": 180,
             "translate": {
-              "x": 772.5085700862196,
-              "y": 1002.0121365
+              "x": 206.58786352663003,
+              "y": 400.6133138174893
             }
           },
           {
             "id": 0,
-            "rotate": 330,
+            "rotate": 180,
             "translate": {
-              "x": 892.3710327407109,
-              "y": 519.4915949998232
+              "x": 562.0068900984686,
+              "y": 388.4151018
+            }
+          },
+          {
+            "id": 6,
+            "rotate": 0,
+            "translate": {
+              "x": 927.9372185825054,
+              "y": 844.9076802365464
+            }
+          },
+          {
+            "id": 11,
+            "rotate": 180,
+            "translate": {
+              "x": 1129.5013664710739,
+              "y": 292.34375980017927
             }
           },
           {
             "id": 3,
-            "rotate": 300,
+            "rotate": 180,
             "translate": {
-              "x": 1457.085887494119,
-              "y": 164.9253037939405
+              "x": 1294.4515365105885,
+              "y": 796.0033158994665
             }
           },
           {
-            "id": 4,
+            "id": 2,
             "rotate": 180,
             "translate": {
-              "x": 1478.9571317597386,
-              "y": 553.8259978904284
+              "x": 1618.5612386628727,
+              "y": 697.0546985352017
             }
           },
           {
             "id": 9,
-            "rotate": 240,
+            "rotate": 180,
             "translate": {
-              "x": 1561.1188709876574,
-              "y": 885.9927702328021
-            }
-          },
-          {
-            "id": 12,
-            "rotate": 90,
-            "translate": {
-              "x": 1986.9026851482406,
-              "y": 425.8736427537803
+              "x": 2058.6879460362247,
+              "y": 401.2676220000001
             }
           }
         ],
         [
           {
-            "id": 2,
-            "rotate": 90,
+            "id": 4,
+            "rotate": 0,
             "translate": {
-              "x": 398.3468306878126,
-              "y": 202.5802883153175
-            }
-          },
-          {
-            "id": 7,
-            "rotate": 300,
-            "translate": {
-              "x": 429.0873725128075,
-              "y": 544.4708526351014
-            }
-          },
-          {
-            "id": 10,
-            "rotate": 240,
-            "translate": {
-              "x": 417.5196016825522,
-              "y": 878.5828411200421
-            }
-          },
-          {
-            "id": 8,
-            "rotate": 210,
-            "translate": {
-              "x": 1040.4638748092145,
-              "y": 495.4870379420821
+              "x": 432.8136540232502,
+              "y": 220.44374272431722
             }
           },
           {
             "id": 5,
             "rotate": 180,
             "translate": {
-              "x": 1161.0383365882199,
-              "y": 850.8714401225118
+              "x": 403.58034848822,
+              "y": 605.7125844225118
+            }
+          },
+          {
+            "id": 10,
+            "rotate": 180,
+            "translate": {
+              "x": 734.776026610755,
+              "y": 846.1189751
+            }
+          },
+          {
+            "id": 7,
+            "rotate": 0,
+            "translate": {
+              "x": 1186.6199900672927,
+              "y": 400.112377938182
+            }
+          },
+          {
+            "id": 8,
+            "rotate": 180,
+            "translate": {
+              "x": 1567.4473643502076,
+              "y": 389.1361904
+            }
+          },
+          {
+            "id": 12,
+            "rotate": 0,
+            "translate": {
+              "x": 1312.7069191487628,
+              "y": 1047.787116304185
             }
           }
         ]
@@ -286,6 +290,11 @@
         {
           "name": "Part Padding",
           "ioValue": 10
+        },
+        {
+          "name": "Orientations",
+          "ioValue": 12,
+          "currentEquation": "12"
         }
       ],
       "placements": [
@@ -421,6 +430,10 @@
         {
           "name": "Part Padding",
           "ioValue": 10
+        },
+        {
+          "name": "Orientations",
+          "ioValue": 4
         }
       ],
       "placements": [
@@ -459,7 +472,7 @@
           },
           {
             "id": 5,
-            "rotate": 270,
+            "rotate": 360,
             "translate": {
               "x": 1715.1773140880134,
               "y": 394.5042249787897
@@ -475,7 +488,7 @@
           },
           {
             "id": 1,
-            "rotate": 90,
+            "rotate": 180,
             "translate": {
               "x": 2049.0329793113247,
               "y": 391.86522959345683
@@ -483,7 +496,7 @@
           },
           {
             "id": 9,
-            "rotate": 270,
+            "rotate": 360,
             "translate": {
               "x": 2255.5720115544063,
               "y": 412.9956752275684
@@ -508,27 +521,27 @@
         ],
         [
           {
-            "id": 8,
-            "rotate": 90,
+            "id": 2,
+            "rotate": 0,
             "translate": {
-              "x": 166.62327872440466,
-              "y": 393.88532417496737
+              "x": 391.0519796497819,
+              "y": 167.1458363562111
+            }
+          },
+          {
+            "id": 8,
+            "rotate": 0,
+            "translate": {
+              "x": 393.88532415192054,
+              "y": 500.9097009749547
             }
           },
           {
             "id": 12,
-            "rotate": 90,
-            "translate": {
-              "x": 497.6457244483854,
-              "y": 406.16835936705127
-            }
-          },
-          {
-            "id": 2,
             "rotate": 0,
             "translate": {
-              "x": 391.0519796467419,
-              "y": 909.0028645300815
+              "x": 406.16835936705127,
+              "y": 829.7562481810374
             }
           }
         ]
@@ -698,6 +711,78 @@
       ]
     },
     {
+      "atomType": "Rectangle",
+      "x": 0.11556982343499196,
+      "y": 0.7785234899328859,
+      "uniqueID": "id-783",
+      "ioValues": [
+        {
+          "name": "x length",
+          "ioValue": 100
+        },
+        {
+          "name": "y length",
+          "ioValue": 100
+        }
+      ]
+    },
+    {
+      "atomType": "Extrude",
+      "x": 0.1797752808988764,
+      "y": 0.8791946308724832,
+      "uniqueID": "id-787",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "height",
+          "ioValue": 100
+        }
+      ]
+    },
+    {
+      "atomType": "Difference",
+      "x": 0.34884965222043873,
+      "y": 0.8635346756152126,
+      "uniqueID": "id-791",
+      "ioValues": [
+        {
+          "name": "geometry1",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "geometry2",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
+      "atomType": "Move",
+      "x": 0.26859283039058324,
+      "y": 0.8612975391498882,
+      "uniqueID": "id-795",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0
+        }
+      ]
+    },
+    {
       "atomType": "GitHubMolecule",
       "x": 0.7356770833333334,
       "y": 0.34523809523809523,
@@ -863,7 +948,7 @@
           "name": "README",
           "ioValues": [
             {
-              "name": "geometry",
+              "name": "value",
               "ioValue": "__GEOMETRY_INPUT__"
             }
           ],
@@ -1105,80 +1190,6 @@
       },
       "unitsKey": "Unitless",
       "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Rectangle",
-      "x": 0.11556982343499196,
-      "y": 0.7785234899328859,
-      "uniqueID": "id-783",
-      "ioValues": [
-        {
-          "name": "x length",
-          "ioValue": 100
-        },
-        {
-          "name": "y length",
-          "ioValue": 100,
-          "currentEquation": "100"
-        }
-      ]
-    },
-    {
-      "atomType": "Extrude",
-      "x": 0.1797752808988764,
-      "y": 0.8791946308724832,
-      "uniqueID": "id-787",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "height",
-          "ioValue": 100,
-          "currentEquation": "100"
-        }
-      ]
-    },
-    {
-      "atomType": "Difference",
-      "x": 0.34884965222043873,
-      "y": 0.8635346756152126,
-      "uniqueID": "id-791",
-      "ioValues": [
-        {
-          "name": "geometry1",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "geometry2",
-          "ioValue": "__GEOMETRY_INPUT__"
-        }
-      ]
-    },
-    {
-      "atomType": "Move",
-      "x": 0.26859283039058324,
-      "y": 0.8612975391498882,
-      "uniqueID": "id-795",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "xDist",
-          "ioValue": 0
-        },
-        {
-          "name": "yDist",
-          "ioValue": 0
-        },
-        {
-          "name": "zDist",
-          "ioValue": 0
-        }
-      ]
     }
   ],
   "allConnectors": [
@@ -1249,6 +1260,21 @@
     },
     {
       "ap2Name": "geometry",
+      "ap1ID": "id-783",
+      "ap2ID": "id-787"
+    },
+    {
+      "ap2Name": "geometry2",
+      "ap1ID": "id-787",
+      "ap2ID": "id-791"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-787",
+      "ap2ID": "id-795"
+    },
+    {
+      "ap2Name": "geometry",
       "ap1ID": "id-225",
       "ap2ID": "id-566"
     },
@@ -1286,21 +1312,6 @@
       "ap2Name": "geometry",
       "ap1ID": "id-658",
       "ap2ID": "id-674"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-783",
-      "ap2ID": "id-787"
-    },
-    {
-      "ap2Name": "geometry2",
-      "ap1ID": "id-787",
-      "ap2ID": "id-791"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-787",
-      "ap2ID": "id-795"
     }
   ],
   "unitsKey": "MM",
