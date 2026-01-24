@@ -26,8 +26,8 @@
     },
     {
       "atomType": "Input",
-      "x": 0.025384615384615384,
-      "y": 0.15384615384615385,
+      "x": 0.05499999999999999,
+      "y": 0.3333333333333333,
       "uniqueID": "id-6",
       "name": "Input (1)",
       "type": "number"
@@ -66,6 +66,10 @@
         {
           "name": "Part Padding",
           "ioValue": 10
+        },
+        {
+          "name": "Orientations",
+          "ioValue": 12
         }
       ],
       "placements": [
@@ -286,6 +290,10 @@
         {
           "name": "Part Padding",
           "ioValue": 10
+        },
+        {
+          "name": "Orientations",
+          "ioValue": 12
         }
       ],
       "placements": [
@@ -421,6 +429,10 @@
         {
           "name": "Part Padding",
           "ioValue": 10
+        },
+        {
+          "name": "Orientations",
+          "ioValue": 12
         }
       ],
       "placements": [
@@ -819,16 +831,16 @@
         },
         {
           "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.15384615384615385,
+          "x": 0.05499999999999999,
+          "y": 0.3333333333333333,
           "uniqueID": "id-223",
           "name": "geometry",
           "type": "geometry"
         },
         {
           "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.24615384615384617,
+          "x": 0.05499999999999999,
+          "y": 0.5333333333333333,
           "uniqueID": "id-224",
           "name": "i",
           "type": "number"
@@ -921,8 +933,8 @@
         },
         {
           "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.15384615384615385,
+          "x": 0.05499999999999999,
+          "y": 0.3333333333333333,
           "uniqueID": "id-272",
           "name": "ShapeToExplode",
           "type": "geometry"
@@ -1009,8 +1021,8 @@
         },
         {
           "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.15384615384615385,
+          "x": 0.05499999999999999,
+          "y": 0.3333333333333333,
           "uniqueID": "id-545",
           "name": "Shape",
           "type": "geometry"
@@ -1118,16 +1130,16 @@
         },
         {
           "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.15384615384615385,
+          "x": 0.05499999999999999,
+          "y": 0.3333333333333333,
           "uniqueID": "id-661",
           "name": "geometry",
           "type": "geometry"
         },
         {
           "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.24615384615384617,
+          "x": 0.05499999999999999,
+          "y": 0.5333333333333333,
           "uniqueID": "id-662",
           "name": "i",
           "type": "number"
